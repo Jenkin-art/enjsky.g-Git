@@ -13,7 +13,7 @@ time:2021-04-29
       <topItem top-title="推荐" nav-path="/index/recommend"></topItem>
     </div>
     <div class="bar-fun" @click="toSearch">
-      <i class="iconfont icon-sousuo"></i>
+      <i class="iconfont icon-icon_search"></i>
     </div>
   </div>
 </template>
@@ -47,7 +47,7 @@ export default {
   padding: 0 20px;
   .bar-fun {
     .iconfont {
-      font-size: 28px;
+      font-size: 27px;
       color: rgb(190, 190, 190);
     }
     .icon-sousuo {
