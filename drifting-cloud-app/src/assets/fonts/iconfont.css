@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2522582 */
-  src: url('//at.alicdn.com/t/font_2522582_xpt7uitoz79.woff2?t=1619766017507') format('woff2'),
-       url('//at.alicdn.com/t/font_2522582_xpt7uitoz79.woff?t=1619766017507') format('woff'),
-       url('//at.alicdn.com/t/font_2522582_xpt7uitoz79.ttf?t=1619766017507') format('truetype');
+  src: url('//at.alicdn.com/t/font_2522582_usephlkhl5.woff2?t=1620092434113') format('woff2'),
+       url('//at.alicdn.com/t/font_2522582_usephlkhl5.woff?t=1620092434113') format('woff'),
+       url('//at.alicdn.com/t/font_2522582_usephlkhl5.ttf?t=1620092434113') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+/* 面对面加朋友图标 */
+.icon-mianduimianjianqun:before {
+  content: "\e69c";
 }
 /* 右侧图标 */
 .icon-youce:before {
@@ -79,10 +83,6 @@
 /* 菜单右图标 */
 .icon-caidanyou:before {
   content: "\e6c3";
-}
-/* 面对面加朋友图标 */
-.icon-mianduimian:before {
-  content: "\e66e";
 }
 /* 加密图标 */
 .icon-jiami:before {
