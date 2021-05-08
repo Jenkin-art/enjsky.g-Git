@@ -1,29 +1,35 @@
 /*
-顶部导航父组件
+顶部导航组件
 author:enjsky.g
-time:2021-04-29
+time:2021-05-07
 */
 <template>
-  <div class="top-bar">
-    <div class="bar-fun" @click="toLive">
-      <i class="iconfont icon-zhibo"></i>
+    <div class="top-bar">
+      <div class="left" @click="toLive">
+        <span class="iconfont icon-zhibo"></span>
+      </div>
+      <div class="center">
+        <TopItem title="关注" nav-path="/index/follows/reVidelList"></TopItem>
+        <TopItem title="推荐" nav-path="/index/recommend/reVidelList"></TopItem>
+      </div>
+      <div class="right" @click="toSearch">
+        <span class="iconfont icon-icon_search"></span>
+      </div>
     </div>
-    <div class="bar-menu">
-      <topItem top-title="关注" nav-path="/index/follows"></topItem>
-      <topItem top-title="推荐" nav-path="/index/recommend"></topItem>
-    </div>
-    <div class="bar-fun" @click="toSearch">
-      <i class="iconfont icon-icon_search"></i>
-    </div>
-  </div>
 </template>
 
 <script>
-import topItem from './TopItem.vue';
+import TopItem from './TopItem.vue';
 
 export default {
+  name: 'Topbar',
   components: {
-    topItem,
+    TopItem,
+  },
+  data() {
+    return {
+      topIndex: 1,
+    };
   },
   methods: {
     toLive() {
@@ -37,30 +43,57 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.top-bar {
-  height: 60px;
-  line-height: 60px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 24px;
-  flex: 1;
-  padding: 0 20px;
-  .bar-fun {
-    .iconfont {
-      font-size: 27px;
-      color: rgb(190, 190, 190);
-    }
-    .icon-sousuo {
-      font-size: 30px;
-    }
-  }
-  .bar-menu {
+  .top-bar {
+    // background: #000000;
+    z-index: 999;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    color: #686868;
     display: flex;
-    justify-content: space-around;
-    font-size: 20px;
-    width: 50%;
-    color: rgb(190, 190, 190);
-    font-weight: 600;
+    box-sizing: border-box;
+    position: fixed;
+    .left {
+      width: 20%;
+      padding-left: 10px;
+      .icon-zhibo {
+        font-size: 25px;
+      }
+    }
+    .center {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      .item {
+        flex: 1;
+        text-align: center;
+        span {
+          padding: 2px 0px;
+          text-align: center;
+          position: relative;
+        }
+        .active {
+          color: #ffffff;
+          &:after {
+            content: "";
+            height: 1px;
+            width: 30px;
+            left: 3px;
+            bottom: -2px;
+            position: absolute;
+            background: #ffffff;
+          }
+        }
+      }
+    }
+    .right {
+      width: 20%;
+      padding-right: 10px;
+      text-align: right;
+      .icon-icon_search {
+        font-size: 25px;
+      }
+    }
   }
-}
 </style>

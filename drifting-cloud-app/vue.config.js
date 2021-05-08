@@ -7,7 +7,7 @@ function resolve(dir) {
 }
 
 module.exports = {
-  outputDir: process.env.NODE_ENV === 'production' ?  'dist': 'douyin' ,
+  outputDir: process.env.NODE_ENV === 'production' ? 'dist' : 'douyin',
   productionSourceMap: false, // 生产环境是否 生成SourceMap
   devServer: {
     port,

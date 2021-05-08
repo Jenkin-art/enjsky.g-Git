@@ -5,8 +5,8 @@ time:2021-04-29
 */
 <template>
   <div class="item" @click="itemClick">
-    <router-link :to="navPath" tag="span" :class="isActive ? 'active' : ''">
-      {{ tabTitle }}
+    <router-link :to="navPath" :class="{active: isActive}" tag="span">
+      {{tabTitle}}
       <slot></slot>
     </router-link>
   </div>
@@ -14,6 +14,7 @@ time:2021-04-29
 
 <script>
 export default {
+  name: 'TabItem',
   props: {
     tabTitle: {
       type: String,
@@ -21,18 +22,16 @@ export default {
     },
     navPath: {
       type: String,
-      default: '/index',
+      require: true,
     },
   },
   computed: {
     isActive() {
-      return this.$route.path.split('/')[1] === this.navPath.split('/')[1];
+      return this.$route.path === this.navPath;
     },
   },
   methods: {
-    itemClick() {
-      console.log(this.$route.path.split('/')[1]);
-    },
+    itemClick() {},
   },
 };
 </script>
@@ -41,10 +40,8 @@ export default {
 .item {
   flex: 1;
   text-align: center;
-  font-weight: 500;
 }
 .active {
   color: #ffff;
-  font-weight: 600;
 }
 </style>

@@ -4,45 +4,51 @@ author:enjsky.g
 time:2021-04-29
 */
 <template>
-  <div class="tab-bar">
-    <TabItem tab-title="首页" nav-path="/index"></TabItem>
-    <TabItem tab-title="朋友" nav-path="/friends"></TabItem>
-    <TabItem nav-path="/release">
-      <img class="dy-btn" src="@/assets/images/dy-btn.png" alt="" />
-    </TabItem>
-    <TabItem tab-title="消息" nav-path="/news"></TabItem>
-    <TabItem tab-title="我的" nav-path="/mine"></TabItem>
+  <div class="tab-bar" >
+  <tab tab-title="首页" nav-path="/index/recommend/reVidelList"></tab>
+  <tab tab-title="朋友" nav-path="/friends"></tab>
+    <tab nav-path="/issue">
+      <img class="dy-btn" alt="" src="../../../assets/images/dy-btn.png">
+    </tab>
+  <tab tab-title="消息" nav-path="/news"></tab>
+  <tab tab-title="我的" nav-path="/me"></tab>
   </div>
 </template>
 
 <script>
-import TabItem from './TabItem.vue';
+import Tab from './TabItem.vue';
 
 export default {
   name: 'Tabbar',
   components: {
-    TabItem,
+    Tab,
   },
 };
 </script>
 
 <style lang="less" scoped>
-.tab-bar {
-  background: #000000;
-  height: 50px;
-  width: 100%;
-  line-height: 50px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-around;
-  color: #cccccc;
-  font-size: 16px;
-  .dy-btn {
-    width: 50px;
-    height: 30px;
-    margin: 10px;
+  .tab-bar {
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    background: #000000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: #cccccc;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    z-index: 9;
+    .item {
+      flex: 1;
+      text-align: center;
+    }
+    .dy-btn {
+      display: inline-block;
+      width: 50px;
+      height: 30px;
+      margin: 10px;
+    }
   }
-}
 </style>

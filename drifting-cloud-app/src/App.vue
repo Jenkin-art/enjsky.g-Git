@@ -4,21 +4,33 @@
   </div>
 </template>
 
-<style lang="less">
-#app {
-  height: 100vh;
-}
+<style lang="less" >
+  #app {
+    height: 100%;
+    background-color: #000;
+    p {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
 
-#nav {
-  padding: 30px;
+    input {
+      outline: none;
+      background: none;
+      border: none;
+    }
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+    ul {
+      list-style: none;
+      padding: 0;
+    }
 
-    &.router-link-exact-active {
-      color: #42b983;
+    .up-enter-active, .up-leave-active {
+      transition: all .6s;
+    }
+
+    .up-enter, .up-leave-to {
+      opacity: 1;
+      transform: translateY(100%);
     }
   }
-}
 </style>

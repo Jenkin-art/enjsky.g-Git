@@ -22,11 +22,11 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    redirect: '/index/recommend/',
+    redirect: '/index/recommend/', // app打开之后 默认跳转到首页的推荐标签栏
   },
   {
     path: '/index',
-    redirect: '/index/recommend/',
+    redirect: '/index/recommend/', // app打开之后 默认跳转到首页的推荐标签栏
   },
   {
     path: '/',
@@ -34,57 +34,77 @@ const routes = [
     component: Home,
     children: [
       {
-        path: '/index',
-        name: 'index', // 首页页面
-        component: () => import(/* webpackChunkName: "index" */ '../views/index/index.vue'),
+        path: '/index', // 首页页面路由
+        name: 'index',
+        component: () => import(/* webpackChunkName: "Index" */ '../views/index/Index.vue'),
         children: [
           {
-            path: 'follows',
-            name: 'follows', // 关注页面
-            component: () => import(/* webpackChunkName: "follows" */ '../views/follow/index.vue'),
+            path: 'follows', // 关注页面路由
+            name: 'follows',
+            component: () => import(/* webpackChunkName: "Follows" */ '../views/follow/Follows.vue'),
             children: [
               {
-                path: 'reVideoList',
-                name: 'reVideoList', // 视频列表
-                component: () => import(/* webpackChunkName: "VideoList" */ '../common/components/index/VideoList.vue'),
+                path: 'reVidelList', // 视频页面路由
+                name: 'reVidelList',
+                component: () => import(/* webpackChunkName: "reVidelList" */ '../common/components/index/VideoList.vue'),
               },
             ],
           },
           {
-            path: 'recommend',
-            name: 'recommend', // 推荐
-            component: () => import(/* webpackChunkName: "recommend" */ '../views/recommend/index.vue'),
+            path: 'recommend', // 推荐页面路由
+            name: 'recommend',
+            component: () => import(/* webpackChunkName: "Recommend" */ '../views/recommend/Recommend.vue'),
             children: [
               {
-                path: 'reVideoList',
-                name: 'reVideoList', // 视频列表
-                component: () => import(/* webpackChunkName: "VideoList" */ '../common/components/index/VideoList.vue'),
+                path: 'reVidelList', // 视频页面路由
+                name: 'reVidelList',
+                component: () => import(/* webpackChunkName: "reVidelList" */ '../common/components/index/VideoList.vue'),
               },
             ],
           },
         ],
       },
       {
-        path: '/friends',
-        name: 'friends', // 朋友页面
-        component: () => import(/* webpackChunkName: "friends" */ '../views/friends/index.vue'),
+        path: '/friends', // 朋友页面路由
+        name: 'friends',
+        component: () => import(/* webpackChunkName: "fllow" */ '../views/friends/Friends.vue'),
       },
       {
-        path: '/news',
-        name: 'news', // 消息页面
-        component: () => import(/* webpackChunkName: "news" */ '../views/news/index.vue'),
+        path: '/news', // 消息页面路由
+        name: 'news',
+        component: () => import(/* webpackChunkName: "news" */ '../views/news/News.vue'),
       },
       {
-        path: '/mine',
-        name: 'mine', // 我的页面
-        component: () => import(/* webpackChunkName: "mine" */ '../views/mine/index.vue'),
+        path: '/me', // 我的信息页面路由
+        name: 'me',
+        component: () => import(/* webpackChunkName: "me" */ '../views/me/Me.vue'),
       },
     ],
   },
+  // {
+  //   path: '/sign',
+  //   name: 'Sign',
+  //   component: () => import(/* webpackChunkName: "sign" */ '../views/Sign'),
+  // },
+  // {
+  //   path: '/tpsign',
+  //   name: 'TPSign',
+  //   component: () => import(/* webpackChunkName: "sign" */ '../views/TPSign'),
+  // },
+  // {
+  //   path: '/code',
+  //   name: 'Code',
+  //   component: () => import(/* webpackChunkName: "sign" */ '../views/Code'),
+  // },
+  // {
+  //   path: '/edit',
+  //   name: 'edit',
+  //   component: () => import(/* webpackChunkName: "edit" */ '../views/me/Edit.vue'),
+  // },
   {
-    path: '/release',
-    name: 'release', // 发布页面
-    component: () => import(/* webpackChunkName: "release" */ '../views/release/index.vue'),
+    path: '/issue', // 发布页面路由
+    name: 'issue',
+    component: () => import(/* webpackChunkName: "issue" */ '../views/issue/Issue.vue'),
   },
 ];
 
