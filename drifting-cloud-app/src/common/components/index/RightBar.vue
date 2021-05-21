@@ -10,7 +10,7 @@ time:2021-05-06
       <div class="avatar-border">
         <!-- 头像 -->
         <img
-          src="../../../assets/images/avatar.png"
+          src="../../../assets/images/avatar-1.jpg"
           style="width: 40px;height: 40px; border-radius: 50%"
           alt
         />
@@ -23,7 +23,7 @@ time:2021-05-06
     </div>
     <!-- 点赞图标 -->
     <div class="item-icon">
-      <span class="iconfont icon-dianzan"></span>
+      <span class="iconfont icon-dianzan" :class="{'active':is}"></span>
       <p>95.9w</p>
     </div>
     <!-- 评论消息 -->
@@ -40,7 +40,7 @@ time:2021-05-06
     <div class="rightbar-item">
       <div class="right-music">
         <img
-          src="../../../assets/images/music_avatar.png"
+          src="../../../assets/images/music_avatar-1.jpg"
           style="width: 30px;height: 30px;border-radius: 50%"
         />
       </div>
@@ -51,6 +51,12 @@ time:2021-05-06
 <script>
 export default {
   name: 'RightBar',
+  props: ['isshow'],
+  data() {
+    return {
+      is: this.isshow,
+    };
+  },
   methods: {
     showCom(e) {
       e.preventDefault();
@@ -90,6 +96,9 @@ export default {
     height: 60px;
     text-align: center;
     padding-bottom: 10px;
+    .active{
+      color:red;
+    }
   }
 
   .iconfont {

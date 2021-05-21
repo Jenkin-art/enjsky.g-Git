@@ -41,8 +41,8 @@ export default {
     line-height: 48px;
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid #292831;
-    background: #101821;
+    // border-bottom: 1px solid #292831;
+    // background: #101821;
     color: #eeeeee;
     position: relative;
     .back {

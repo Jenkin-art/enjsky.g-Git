@@ -22,7 +22,7 @@ time:2021-05-07
       <div class="me-content">
         <div class="info">
           <!-- 头像 -->
-          <img class="info_img" src="../../assets/images/avatar.png" alt />
+          <img class="info_img" src="../../assets/images/avatar-1.jpg" alt />
           <button class="btn">编辑资料</button>
           <button class="btn">+朋友</button>
         </div>
@@ -70,30 +70,30 @@ time:2021-05-07
         <div class="tab-wrap">
           <div class="tab-con" v-show="indexTab === 0">
             <div class="tab-img">
-              <img src="../../assets/images/1.jpeg" />
-              <img src="../../assets/images/1.jpeg" />
-              <img src="../../assets/images/1.jpeg" />
+              <img src="../../assets/images/1.jpg" />
+              <img src="../../assets/images/2.jpg" />
+              <img src="../../assets/images/3.jpg" />
             </div>
           </div>
           <div class="tab-con" v-show="indexTab === 1">
             <div class="tab-img">
-              <img src="../../assets/images/2.jpg" />
-              <img src="../../assets/images/2.jpg" />
-              <img src="../../assets/images/2.jpg" />
+              <img src="../../assets/images/4.jpg" />
+              <img src="../../assets/images/5.jpg" />
+              <img src="../../assets/images/6.jpg" />
             </div>
           </div>
           <div class="tab-con" v-show="indexTab === 2">
             <div class="tab-img">
-              <img src="../../assets/images/3.jpg" />
-              <img src="../../assets/images/3.jpg" />
-              <img src="../../assets/images/3.jpg" />
+              <img src="../../assets/images/7.jpg" />
+              <img src="../../assets/images/8.jpg" />
+              <img src="../../assets/images/9.jpg" />
             </div>
           </div>
           <div class="tab-con" v-show="indexTab === 3">
             <div class="tab-img">
-              <img src="../../assets/images/3.jpg" />
-              <img src="../../assets/images/3.jpg" />
-              <img src="../../assets/images/3.jpg" />
+              <img src="../../assets/images/10.jpg" />
+              <img src="../../assets/images/11.jpg" />
+              <img src="../../assets/images/12.jpg" />
             </div>
           </div>
         </div>
@@ -276,7 +276,7 @@ export default {
           font-size: 16px;
         }
         .active {
-          border-bottom: 2px solid #ffdf03;
+          border-bottom: 2px solid #0563a1;
           color: #ffffff;
         }
       }

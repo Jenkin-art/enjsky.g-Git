@@ -18,7 +18,7 @@ export default {
     return {
       playerOptions: {
         autoplay: false, // 如果true,浏览器准备好时开始回放。
-        muted: true, // 默认情况下将会消除任何音频。
+        muted: false, // 默认情况下将会消除任何音频。
         loop: true, // 导致视频一结束就重新开始。
         preload: 'auto',
         fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。

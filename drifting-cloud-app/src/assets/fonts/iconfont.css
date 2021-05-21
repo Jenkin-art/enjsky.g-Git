@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2522582 */
-  src: url('//at.alicdn.com/t/font_2522582_3qwenqfn6c4.woff2?t=1620445670100') format('woff2'),
-       url('//at.alicdn.com/t/font_2522582_3qwenqfn6c4.woff?t=1620445670100') format('woff'),
-       url('//at.alicdn.com/t/font_2522582_3qwenqfn6c4.ttf?t=1620445670100') format('truetype');
+  src: url('//at.alicdn.com/t/font_2522582_u3ip0r6a9e.woff2?t=1621043172905') format('woff2'),
+       url('//at.alicdn.com/t/font_2522582_u3ip0r6a9e.woff?t=1621043172905') format('woff'),
+       url('//at.alicdn.com/t/font_2522582_u3ip0r6a9e.ttf?t=1621043172905') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+/* 心图标 */
+.icon-xin:before {
+  content: "\e75f";
+}
+/* 表情图标 */
+.icon-emoji:before {
+  content: "\e64a";
+}
+/* 关闭图标 */
+.icon-guanbi:before {
+  content: "\e61a";
 }
 /* 朋友图标 */
 .icon-pengyou:before {

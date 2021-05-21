@@ -6,11 +6,13 @@
         <div style="height: 100%;width: 100%;margin: 0 auto">
           <Videos :video="item" ref="videos" :index="index"></Videos>
         </div>
+        <!-- 视频底部详情组件 -->
         <div class="info-wrap">
           <info-bar></info-bar>
         </div>
+        <!-- 右侧点评快捷功能组件 -->
         <div class="rightbar_wrap">
-          <right-bar @changeCom="showComs"></right-bar>
+          <right-bar @changeCom="showComs" :isshow="isShow"></right-bar>
         </div>
       </swiper-slide>
     </swiper>
@@ -25,285 +27,80 @@
             </div>
           </div>
           <div class="comment-body">
+            <!-- 评论列 -->
             <div class="comment-box">
               <div class="comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
+                <img class="user-pic" src="../../../assets/images/avatar-1.jpg" alt />
                 <div class="item-info">
                   <div class="replay">
-                    <p class="name">前端切图仔</p>
+                    <p class="name">快乐仔逛学习</p>
                     <p
                       class="replay-des"
-                    >今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班</p>
+                    >快乐仔每天在学习</p>
                     <p class="time">03-19</p>
                   </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
+                  <div class="zan" @click="showLike">
+                    <span style="text-align: center">
+                      <i class="iconfont icon-xin" :class="{'active':isShow}"></i>
                       <p>10</p>
                     </span>
                   </div>
                 </div>
               </div>
               <div class="sub-comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
+                <img class="user-pic" src="../../../assets/images/avatar-1.jpg" alt />
                 <div class="item-info">
                   <div class="replay">
-                    <p class="name">啦啦啦</p>
-                    <p class="reply-name">不加班不加班</p>
+                    <p class="name">开心开心😊</p>
+                    <p class="reply-name">学习快乐</p>
                     <p class="time">03-19</p>
                   </div>
                   <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>20</p>
+                    <span style="text-align: center">
+                      <i class="iconfont icon-xin" :class="{'active':isShow}"></i>
+                      <p>66</p>
                     </span>
                   </div>
                 </div>
               </div>
-              <div class="more">展开60条回复</div>
+              <div class="more">展开10条回复</div>
             </div>
             <div class="comment-box">
               <div class="comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
+                <img class="user-pic" src="../../../assets/images/avatar-1.jpg" alt />
                 <div class="item-info">
                   <div class="replay">
-                    <p class="name">前端切图仔</p>
+                    <p class="name">快乐仔逛学习</p>
                     <p
                       class="replay-des"
-                    >今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班</p>
+                    >快乐仔每天在学习</p>
                     <p class="time">03-19</p>
                   </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
+                  <div class="zan" @click="showLike">
+                    <span style="text-align: center">
+                      <i class="iconfont icon-xin" :class="{'active':isShow}"></i>
                       <p>10</p>
                     </span>
                   </div>
                 </div>
               </div>
               <div class="sub-comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
+                <img class="user-pic" src="../../../assets/images/avatar-1.jpg" alt />
                 <div class="item-info">
                   <div class="replay">
-                    <p class="name">啦啦啦</p>
-                    <p class="reply-name">不加班不加班</p>
+                    <p class="name">开心开心😊</p>
+                    <p class="reply-name">学习快乐</p>
                     <p class="time">03-19</p>
                   </div>
                   <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>20</p>
+                    <span style="text-align: center">
+                      <i class="iconfont icon-xin" :class="{'active':isShow}"></i>
+                      <p>66</p>
                     </span>
                   </div>
                 </div>
               </div>
-              <div class="more">展开60条回复</div>
-            </div>
-            <div class="comment-box">
-              <div class="comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
-                <div class="item-info">
-                  <div class="replay">
-                    <p class="name">前端切图仔</p>
-                    <p
-                      class="replay-des"
-                    >今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班</p>
-                    <p class="time">03-19</p>
-                  </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>10</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="sub-comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
-                <div class="item-info">
-                  <div class="replay">
-                    <p class="name">啦啦啦</p>
-                    <p class="reply-name">不加班不加班</p>
-                    <p class="time">03-19</p>
-                  </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>20</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="more">展开60条回复</div>
-            </div>
-            <div class="comment-box">
-              <div class="comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
-                <div class="item-info">
-                  <div class="replay">
-                    <p class="name">前端切图仔</p>
-                    <p
-                      class="replay-des"
-                    >今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班</p>
-                    <p class="time">03-19</p>
-                  </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>10</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="sub-comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
-                <div class="item-info">
-                  <div class="replay">
-                    <p class="name">啦啦啦</p>
-                    <p class="reply-name">不加班不加班</p>
-                    <p class="time">03-19</p>
-                  </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>20</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="more">展开60条回复</div>
-            </div>
-            <div class="comment-box">
-              <div class="comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
-                <div class="item-info">
-                  <div class="replay">
-                    <p class="name">前端切图仔</p>
-                    <p
-                      class="replay-des"
-                    >今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班</p>
-                    <p class="time">03-19</p>
-                  </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>10</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="sub-comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
-                <div class="item-info">
-                  <div class="replay">
-                    <p class="name">啦啦啦</p>
-                    <p class="reply-name">不加班不加班</p>
-                    <p class="time">03-19</p>
-                  </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>20</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="more">展开60条回复</div>
-            </div>
-            <div class="comment-box">
-              <div class="comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
-                <div class="item-info">
-                  <div class="replay">
-                    <p class="name">前端切图仔</p>
-                    <p
-                      class="replay-des"
-                    >今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班</p>
-                    <p class="time">03-19</p>
-                  </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>10</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="sub-comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
-                <div class="item-info">
-                  <div class="replay">
-                    <p class="name">啦啦啦</p>
-                    <p class="reply-name">不加班不加班</p>
-                    <p class="time">03-19</p>
-                  </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>20</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="more">展开60条回复</div>
-            </div>
-            <div class="comment-box">
-              <div class="comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
-                <div class="item-info">
-                  <div class="replay">
-                    <p class="name">前端切图仔</p>
-                    <p
-                      class="replay-des"
-                    >今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班</p>
-                    <p class="time">03-19</p>
-                  </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>10</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="sub-comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
-                <div class="item-info">
-                  <div class="replay">
-                    <p class="name">啦啦啦</p>
-                    <p class="reply-name">不加班不加班</p>
-                    <p class="time">03-19</p>
-                  </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>20</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="more">展开60条回复</div>
-            </div>
-            <div class="comment-box">
-              <div class="comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
-                <div class="item-info">
-                  <div class="replay">
-                    <p class="name">前端切图仔</p>
-                    <p
-                      class="replay-des"
-                    >今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班今晚不要加班</p>
-                    <p class="time">03-19</p>
-                  </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>10</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="sub-comment-item">
-                <img class="user-pic" src="../../../assets/images/avatar.png" alt />
-                <div class="item-info">
-                  <div class="replay">
-                    <p class="name">啦啦啦</p>
-                    <p class="reply-name">不加班不加班</p>
-                    <p class="time">03-19</p>
-                  </div>
-                  <div class="zan">
-                    <span class="iconfont icon-xinaixin-fuben" style="text-align: center">
-                      <p>20</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="more">展开60条回复</div>
+              <div class="more">展开10条回复</div>
             </div>
           </div>
           <div class="reply-input">
@@ -334,33 +131,38 @@ export default {
     return {
       // 是否弹出评论信息
       showComment: false,
+      isShow: false, // 是否加载点赞
       swiperOptions: {
-        direction: 'vertical',
-        grabCursor: true,
+        direction: 'vertical', // 滑动方向
+        grabCursor: true, // 小手掌抓取滑动
         setWrapperSize: true,
-        autoHeight: true,
-        slidesPerView: 1,
-        mousewheel: true,
+        autoHeight: true, // 当autoHeight为启用状态，设置更新swiper高度的时间。
+        slidesPerView: 1, // 设置slider容器能够同时显示的slides数量(carousel模式)。
+        mousewheel: true, // 开启鼠标滚轮控制Swiper切换。可设置鼠标选项，或true使用默认值。
         mousewheelControl: true,
         height: window.innerHeight - 50,
-        resistanceRatio: 0,
-        observeParents: true,
+        resistanceRatio: 0, // 抵抗率。边缘抵抗力的大小比例。值越小抵抗越大越难将slide拖离边缘，0时完全无法拖离。
+        observeParents: true, // 将observe应用于Swiper的祖先元素。当Swiper的祖先元素变化时，例如window.resize，Swiper更新。
         on: {
+          // 播放
           tap: () => {
-            // 播放
             this.playAction(this.page - 1);
           },
+          // 上滑
           slidePrevTransitionStart: () => {
-            // 上滑
             if (this.page > 1) {
               this.page -= 1;
               this.preVideo(this.page - 1);
             }
           },
+          // 下滑动
           slideNextTransitionStart: () => {
-            // 下滑动
             this.page += 1;
             this.nextVideo(this.page - 1);
+          },
+          // 双击点赞小红心
+          doubleTap: () => {
+            this.isShow = true;
           },
         },
       },
@@ -383,13 +185,18 @@ export default {
       this.$refs.videos[index].play();
       this.$refs.videos[index - 1].stop();
     },
-    // 弹出
+    // 评论弹出
     showComs() {
       this.showComment = true;
     },
-    // 关闭
+    // 评论关闭
     close() {
       this.showComment = false;
+      this.isShow = false;
+    },
+    // 加载点赞
+    showLike() {
+      this.isShow = true;
     },
   },
 };
@@ -464,7 +271,6 @@ export default {
         .comment-item {
           display: flex;
         }
-
         .sub-comment-item {
           display: flex;
           margin-left: 33px;
@@ -508,11 +314,12 @@ export default {
           .zan {
             color: rgb(205, 205, 205);
             display: flex;
-
-            .icon-xinaixin-fuben {
+            .icon-xin {
               font-size: 20px;
             }
-
+            .active {
+              color: red;
+            }
             p {
               font-size: 15px;
             }

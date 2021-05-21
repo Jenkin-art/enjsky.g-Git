@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import less from 'less';
 // 滑动特效插件
 import VueSwiper from 'vue-awesome-swiper';
 import 'swiper/swiper-bundle.css';
@@ -12,6 +13,7 @@ import 'lib-flexible/flexible';// 实现了rem自适应布局
 import './assets/styles/normalize.css';// 解决不同浏览器之间的差异
 import './assets/fonts/iconfont.css';// icon图标引入
 
+Vue.use(less);
 Vue.use(VueSwiper);
 Vue.use(VueVideoPlayer);
 Vue.config.productionTip = false;

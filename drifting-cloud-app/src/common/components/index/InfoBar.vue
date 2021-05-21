@@ -5,12 +5,12 @@ time:2021-05-06
 */
 <template>
   <div class="info-bar">
-    <div class="infobar-item">逗逗飞</div>
-    <div class="infobar-item">Vue 从0到1 实战</div>
+    <div class="infobar-item">小豆豆</div>
+    <div class="infobar-item">小豆豆在表演</div>
     <div class="infobar-item music-item">
       <span class="iconfont icon-douyinbiaoshishang"></span>
       <div class="music-name">
-        <span data-text="千岛群岛群无多">千岛群岛群无多</span>
+        <span data-text="小豆豆的配乐唱大风吹">小豆豆的配乐唱大风吹</span>
       </div>
     </div>
   </div>
